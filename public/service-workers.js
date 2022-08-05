@@ -61,10 +61,10 @@ self.addEventListener("fetch", event => {
                     return response;
                 })
                 .catch(() => {
-                    return.cache.match(event.request);
+                    return cache.match(event.request);
                 });
             })
-            .cache((err) => console.log(err))
+            .catch((err) => console.log(err))
         );
         return;
     }
