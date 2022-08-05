@@ -13,9 +13,9 @@ request.onsuccess = ((event) => {
     }
 });
 
-request.onerror = ((event) => [
+request.onerror = ((event) => {
     console.log("oops" + event.target.errorCode);
-]);
+});
 
 //when the app is offline this will save budget changes
 
@@ -44,7 +44,7 @@ function saveRecord(record) {
         function deletePending() {
             const transaction = db.transaction("pending", "readWrite");
             const store = transaction.objectStore("pending");
-            store.clear():
+            store.clear();
         };
     };
 };
